@@ -10,9 +10,14 @@ def encode(strs):
 
 def decode(strs):
     output = []
-    j = 0
-
-    for i in range(len(strs)-1):
-       pass
-        # BUKAS NALANG
+    indicator = '#'
+    i = 0
+    while i < len(strs):
+        num = strs.find(indicator, i)
+        dig = int(strs[i:num])
+        sliced = strs[num+1:(num+1)+dig]
+        
+        output.append(sliced)
+        i = num + 1 + dig
+    return output
 print(decode(encode(input)))
