@@ -20,4 +20,5 @@ def decode(strs):
         output.append(sliced)
         i = num + 1 + dig
     return output
+
 print(decode(encode(input)))
